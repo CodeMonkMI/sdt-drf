@@ -1,0 +1,352 @@
+[
+    {
+        "model": "author.author",
+        "pk": "2c6b5c34-5c8a-4f7f-9b1b-6f2c2aaf9b11",
+        "fields": {
+            "name": "J.K. Rowling",
+            "biography": "British author best known for the Harry Potter series.",
+            "created_at": "2025-01-01T10:00:00Z",
+            "updated_at": "2025-01-01T10:00:00Z"
+        }
+    },
+    {
+        "model": "author.author",
+        "pk": "4b0f6b6d-2f5d-4a6a-8a3d-6a0c9d9c3a22",
+        "fields": {
+            "name": "George R.R. Martin",
+            "biography": "American novelist and short story writer, author of A Song of Ice and Fire.",
+            "created_at": "2025-01-02T10:00:00Z",
+            "updated_at": "2025-01-02T10:00:00Z"
+        }
+    },
+    {
+        "model": "author.author",
+        "pk": "7b1a8b77-6c65-4b0c-8f0b-b5a7f8b1d333",
+        "fields": {
+            "name": "Agatha Christie",
+            "biography": "English writer known for her detective novels.",
+            "created_at": "2025-01-03T10:00:00Z",
+            "updated_at": "2025-01-03T10:00:00Z"
+        }
+    },
+    {
+        "model": "author.author",
+        "pk": "8c9d7e66-3f2a-4d1b-9c7e-1f2e3d4c5b44",
+        "fields": {
+            "name": "J.R.R. Tolkien",
+            "biography": "English writer, poet, and philologist, author of The Lord of the Rings.",
+            "created_at": "2025-01-04T10:00:00Z",
+            "updated_at": "2025-01-04T10:00:00Z"
+        }
+    },
+    {
+        "model": "author.author",
+        "pk": "1a2b3c4d-5e6f-4701-8203-94a5b6c7d555",
+        "fields": {
+            "name": "Stephen King",
+            "biography": "American author of horror, supernatural fiction, suspense, and fantasy novels.",
+            "created_at": "2025-01-05T10:00:00Z",
+            "updated_at": "2025-01-05T10:00:00Z"
+        }
+    },
+    {
+        "model": "author.author",
+        "pk": "9a8b7c6d-5e4f-4d3c-8b2a-1c0d9e8f6e66",
+        "fields": {
+            "name": "Jane Austen",
+            "biography": "English novelist known for Pride and Prejudice and Sense and Sensibility.",
+            "created_at": "2025-01-06T10:00:00Z",
+            "updated_at": "2025-01-06T10:00:00Z"
+        }
+    },
+    {
+        "model": "author.author",
+        "pk": "0f1e2d3c-4b5a-4968-9a7b-6c5d4e3f2a77",
+        "fields": {
+            "name": "Mark Twain",
+            "biography": "American writer, humorist, entrepreneur, publisher, and lecturer.",
+            "created_at": "2025-01-07T10:00:00Z",
+            "updated_at": "2025-01-07T10:00:00Z"
+        }
+    },
+    {
+        "model": "author.author",
+        "pk": "a1b2c3d4-e5f6-4789-90ab-b1c2d3e4f888",
+        "fields": {
+            "name": "Ernest Hemingway",
+            "biography": "American novelist, short-story writer, and journalist.",
+            "created_at": "2025-01-08T10:00:00Z",
+            "updated_at": "2025-01-08T10:00:00Z"
+        }
+    },
+    {
+        "model": "author.author",
+        "pk": "bbccdde0-1122-4333-9444-556677889999",
+        "fields": {
+            "name": "Leo Tolstoy",
+            "biography": "Russian writer, author of War and Peace and Anna Karenina.",
+            "created_at": "2025-01-09T10:00:00Z",
+            "updated_at": "2025-01-09T10:00:00Z"
+        }
+    },
+    {
+        "model": "author.author",
+        "pk": "c0ffee00-1234-4abc-9def-0011223344aa",
+        "fields": {
+            "name": "Charles Dickens",
+            "biography": "English writer and social critic.",
+            "created_at": "2025-01-10T10:00:00Z",
+            "updated_at": "2025-01-10T10:00:00Z"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": "11111111-1111-4111-8111-111111111111",
+        "fields": {
+            "title": "Harry Potter and the Philosopher's Stone",
+            "isbn": "9780747532699",
+            "category": "Fantasy",
+            "status": "available",
+            "author": "2c6b5c34-5c8a-4f7f-9b1b-6f2c2aaf9b11",
+            "created_at": "2025-01-01T10:00:00Z",
+            "updated_at": "2025-01-01T10:00:00Z"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": "22222222-2222-4222-8222-222222222222",
+        "fields": {
+            "title": "A Game of Thrones",
+            "isbn": "9780553103540",
+            "category": "Fantasy",
+            "status": "available",
+            "author": "4b0f6b6d-2f5d-4a6a-8a3d-6a0c9d9c3a22",
+            "created_at": "2025-01-02T10:00:00Z",
+            "updated_at": "2025-01-02T10:00:00Z"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": "33333333-3333-4333-8333-333333333333",
+        "fields": {
+            "title": "Murder on the Orient Express",
+            "isbn": "9780062693662",
+            "category": "Mystery",
+            "status": "available",
+            "author": "7b1a8b77-6c65-4b0c-8f0b-b5a7f8b1d333",
+            "created_at": "2025-01-03T10:00:00Z",
+            "updated_at": "2025-01-03T10:00:00Z"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": "44444444-4444-4444-8444-444444444444",
+        "fields": {
+            "title": "The Hobbit",
+            "isbn": "9780345339683",
+            "category": "Fantasy",
+            "status": "unavailable",
+            "author": "8c9d7e66-3f2a-4d1b-9c7e-1f2e3d4c5b44",
+            "created_at": "2025-01-04T10:00:00Z",
+            "updated_at": "2025-01-04T10:00:00Z"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": "55555555-5555-4555-8555-555555555555",
+        "fields": {
+            "title": "The Shining",
+            "isbn": "9780307743657",
+            "category": "Horror",
+            "status": "available",
+            "author": "1a2b3c4d-5e6f-4701-8203-94a5b6c7d555",
+            "created_at": "2025-01-05T10:00:00Z",
+            "updated_at": "2025-01-05T10:00:00Z"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": "66666666-6666-4666-8666-666666666666",
+        "fields": {
+            "title": "Pride and Prejudice",
+            "isbn": "9781503290563",
+            "category": "Romance",
+            "status": "available",
+            "author": "9a8b7c6d-5e4f-4d3c-8b2a-1c0d9e8f6e66",
+            "created_at": "2025-01-06T10:00:00Z",
+            "updated_at": "2025-01-06T10:00:00Z"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": "77777777-7777-4777-8777-777777777777",
+        "fields": {
+            "title": "The Adventures of Tom Sawyer",
+            "isbn": "9780141321103",
+            "category": "Adventure",
+            "status": "available",
+            "author": "0f1e2d3c-4b5a-4968-9a7b-6c5d4e3f2a77",
+            "created_at": "2025-01-07T10:00:00Z",
+            "updated_at": "2025-01-07T10:00:00Z"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": "88888888-8888-4888-8888-888888888888",
+        "fields": {
+            "title": "The Old Man and the Sea",
+            "isbn": "9780684801223",
+            "category": "Fiction",
+            "status": "unavailable",
+            "author": "a1b2c3d4-e5f6-4789-90ab-b1c2d3e4f888",
+            "created_at": "2025-01-08T10:00:00Z",
+            "updated_at": "2025-01-08T10:00:00Z"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": "99999999-9999-4999-8999-999999999999",
+        "fields": {
+            "title": "War and Peace",
+            "isbn": "9780199232765",
+            "category": "Historical",
+            "status": "available",
+            "author": "bbccdde0-1122-4333-9444-556677889999",
+            "created_at": "2025-01-09T10:00:00Z",
+            "updated_at": "2025-01-09T10:00:00Z"
+        }
+    },
+    {
+        "model": "book.book",
+        "pk": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+        "fields": {
+            "title": "A Tale of Two Cities",
+            "isbn": "9780486417769",
+            "category": "Historical",
+            "status": "available",
+            "author": "c0ffee00-1234-4abc-9def-0011223344aa",
+            "created_at": "2025-01-10T10:00:00Z",
+            "updated_at": "2025-01-10T10:00:00Z"
+        }
+    },
+    {
+        "model": "member.member",
+        "pk": "0a1b2c3d-4e5f-4678-890a-bcdef0123456",
+        "fields": {
+            "name": "Alice Johnson",
+            "email": "alice@example.com",
+            "membership_date": "2024-05-01T10:00:00Z",
+            "status": "active",
+            "created_at": "2025-01-01T10:00:00Z",
+            "updated_at": "2025-01-01T10:00:00Z"
+        }
+    },
+    {
+        "model": "member.member",
+        "pk": "10fedcba-9876-4321-8abc-def012345678",
+        "fields": {
+            "name": "Bob Smith",
+            "email": "bob@example.com",
+            "membership_date": "2024-05-02T10:00:00Z",
+            "status": "active",
+            "created_at": "2025-01-02T10:00:00Z",
+            "updated_at": "2025-01-02T10:00:00Z"
+        }
+    },
+    {
+        "model": "member.member",
+        "pk": "21aa43b2-c3d4-45e6-8f90-1234567890ab",
+        "fields": {
+            "name": "Carol Davis",
+            "email": "carol@example.com",
+            "membership_date": "2024-05-03T10:00:00Z",
+            "status": "inactive",
+            "created_at": "2025-01-03T10:00:00Z",
+            "updated_at": "2025-01-03T10:00:00Z"
+        }
+    },
+    {
+        "model": "member.member",
+        "pk": "32bb54c3-d4e5-46f7-9801-234567890abc",
+        "fields": {
+            "name": "David Wilson",
+            "email": "david@example.com",
+            "membership_date": "2024-05-04T10:00:00Z",
+            "status": "active",
+            "created_at": "2025-01-04T10:00:00Z",
+            "updated_at": "2025-01-04T10:00:00Z"
+        }
+    },
+    {
+        "model": "member.member",
+        "pk": "43cc65d4-e5f6-4708-9012-34567890abcd",
+        "fields": {
+            "name": "Emily Brown",
+            "email": "emily@example.com",
+            "membership_date": "2024-05-05T10:00:00Z",
+            "status": "inactive",
+            "created_at": "2025-01-05T10:00:00Z",
+            "updated_at": "2025-01-05T10:00:00Z"
+        }
+    },
+    {
+        "model": "member.member",
+        "pk": "54dd76e5-f607-4819-0123-4567890abcde",
+        "fields": {
+            "name": "Frank Miller",
+            "email": "frank@example.com",
+            "membership_date": "2024-05-06T10:00:00Z",
+            "status": "active",
+            "created_at": "2025-01-06T10:00:00Z",
+            "updated_at": "2025-01-06T10:00:00Z"
+        }
+    },
+    {
+        "model": "member.member",
+        "pk": "65ee87f6-0718-492a-1234-567890abcdef",
+        "fields": {
+            "name": "Grace Lee",
+            "email": "grace@example.com",
+            "membership_date": "2024-05-07T10:00:00Z",
+            "status": "active",
+            "created_at": "2025-01-07T10:00:00Z",
+            "updated_at": "2025-01-07T10:00:00Z"
+        }
+    },
+    {
+        "model": "member.member",
+        "pk": "76ff9807-1829-4a3b-2345-67890abcdef1",
+        "fields": {
+            "name": "Henry White",
+            "email": "henry@example.com",
+            "membership_date": "2024-05-08T10:00:00Z",
+            "status": "inactive",
+            "created_at": "2025-01-08T10:00:00Z",
+            "updated_at": "2025-01-08T10:00:00Z"
+        }
+    },
+    {
+        "model": "member.member",
+        "pk": "8700a918-293a-4b4c-3456-7890abcdef12",
+        "fields": {
+            "name": "Ivy Taylor",
+            "email": "ivy@example.com",
+            "membership_date": "2024-05-09T10:00:00Z",
+            "status": "active",
+            "created_at": "2025-01-09T10:00:00Z",
+            "updated_at": "2025-01-09T10:00:00Z"
+        }
+    },
+    {
+        "model": "member.member",
+        "pk": "9811ba29-3a4b-4c5d-4567-890abcdef123",
+        "fields": {
+            "name": "Jack Thomas",
+            "email": "jack@example.com",
+            "membership_date": "2024-05-10T10:00:00Z",
+            "status": "active",
+            "created_at": "2025-01-10T10:00:00Z",
+            "updated_at": "2025-01-10T10:00:00Z"
+        }
+    }
+]
