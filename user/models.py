@@ -1,12 +1,12 @@
-from pyexpat import model
-from uuid import uuid4
 from django.db import models
-from author.models import Author
+from uuid import uuid4
+from django.contrib.auth.models import AbstractUser
+
 
 # Create your models here.
 
 
-class Member(models.Model):
+class CustomUser(AbstractUser):
     ACTIVE = "active"
     INACTIVE = "inactive"
     STATUS_CHOICES = [
@@ -16,13 +16,10 @@ class Member(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
-    name = models.CharField(max_length=50)
-    email = models.CharField(max_length=50, unique=True)
-    membership_date = models.DateTimeField(max_length=255)
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=ACTIVE)
+    membership_date = models.DateTimeField(max_length=255, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.first_name} {self.last_name}"

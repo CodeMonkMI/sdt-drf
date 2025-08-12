@@ -1,15 +1,19 @@
 from rest_framework import serializers
 from borrow_record.models import BorrowRecord
 from book.models import Book
-from member.models import Member
 from borrow_record.models import BorrowRecord
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
-class MemberSerializers(serializers.ModelSerializer):
+class UserSerializers(serializers.ModelSerializer):
     class Meta:
-        model = Member
+        model = User
         fields = [
-            "name",
+            "first_name",
+            "last_name",
+            "username",
         ]
 
 
@@ -52,13 +56,12 @@ class BorrowBookSerializers(serializers.ModelSerializer):
         }
 
     def get_member_name(self, borrow: BorrowRecord):
-        return borrow.member.name
+        return f"{borrow.member.first_name} {borrow.member.last_name}"
 
     def get_book_name(self, borrow: BorrowRecord):
         return borrow.book.title
 
     def validate_book(self, book):
-
         if book.status == Book.UNAVAILABLE:
             raise serializers.ValidationError("You requested book is unavailable!")
         return book

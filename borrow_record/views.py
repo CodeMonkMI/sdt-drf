@@ -4,9 +4,10 @@ from borrow_record.models import BorrowRecord
 from borrow_record.serializers import BorrowBookSerializers, ReturnBookSerializers
 from django.utils import timezone
 from book.models import Book
-from member.models import Member
+from django.contrib.auth import get_user_model
 
 # Create your views here.
+User = get_user_model()
 
 
 class BorrowBookViewSet(CreateModelMixin, GenericViewSet):
@@ -29,7 +30,7 @@ class ReturnBookViewSet(CreateModelMixin, GenericViewSet):
 
     def perform_create(self, serializer):
         book: Book = serializer.validated_data["book"]
-        member: Member = serializer.validated_data["member"]
+        member = serializer.validated_data["member"]
         return_date = (
             serializer.validated_data["return_date"] or timezone.datetime.now()
         )
