@@ -1,4 +1,6 @@
+from enum import member
 from rest_framework import serializers
+import borrow_record
 from borrow_record.models import BorrowRecord
 from book.models import Book
 from borrow_record.models import BorrowRecord
@@ -7,31 +9,10 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class UserSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = [
-            "first_name",
-            "last_name",
-            "username",
-        ]
-
-
-class BookSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Book
-        fields = [
-            "title",
-        ]
-
-
 class BorrowBookSerializers(serializers.ModelSerializer):
-    member_name = serializers.SerializerMethodField(
-        method_name="get_member_name",
-        read_only=True,
-    )
-    book_title = serializers.SerializerMethodField(
-        method_name="get_book_name",
+
+    book_title = serializers.CharField(
+        source="book.title",
         read_only=True,
     )
 
@@ -42,24 +23,15 @@ class BorrowBookSerializers(serializers.ModelSerializer):
     class Meta:
         model = BorrowRecord
         fields = [
-            "member",
             "book",
             "borrow_date",
             "due_date",
-            "member_name",
             "book_title",
         ]
 
         extra_kwargs = {
-            "member": {"write_only": True},
             "book": {"write_only": True},
         }
-
-    def get_member_name(self, borrow: BorrowRecord):
-        return f"{borrow.member.first_name} {borrow.member.last_name}"
-
-    def get_book_name(self, borrow: BorrowRecord):
-        return borrow.book.title
 
     def validate_book(self, book):
         if book.status == Book.UNAVAILABLE:
@@ -69,23 +41,35 @@ class BorrowBookSerializers(serializers.ModelSerializer):
 
 class ReturnBookSerializers(serializers.ModelSerializer):
 
-    book = serializers.PrimaryKeyRelatedField(
-        queryset=Book.objects.filter(status=Book.UNAVAILABLE)
+    book = serializers.PrimaryKeyRelatedField(queryset=[], write_only=True)
+    book_title = serializers.CharField(
+        source="book.title",
+        read_only=True,
     )
+    returned_at = serializers.DateTimeField(
+        source="return_date",
+        read_only=True,
+    )
+
+    def __init__(self, *args, **kwargs):
+
+        super().__init__(*args, **kwargs)
+
+        if "member" in self.context:
+
+            member = self.context["member"]
+            # data = BorrowRecord.objects.filter(member=member, return_date__isnull=True)
+            self.fields["book"].queryset = Book.objects.filter(
+                borrows__member=member, borrows__return_date__isnull=True
+            ).distinct()
 
     class Meta:
         model = BorrowRecord
         fields = [
-            "member",
+            "book_title",
             "book",
-            "created_at",
-            "return_date",
+            "returned_at",
         ]
-        extra_kwargs = {
-            "member": {"write_only": True},
-            "book": {"write_only": True},
-            "created_at": {"read_only": True},
-        }
 
     def validate_book(self, book):
         if book.status == Book.AVAILABLE:
@@ -93,7 +77,7 @@ class ReturnBookSerializers(serializers.ModelSerializer):
         return book
 
     def validate(self, attrs):
-        member = attrs["member"]
+        member = self.context["member"]
         book = attrs["book"]
         find_records = BorrowRecord.objects.filter(
             member=member,
