@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "book",
     "borrow_record",
     "debug_toolbar",
+    "drf_yasg",
 ]
 
 MIDDLEWARE = [
@@ -135,4 +136,16 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",),
     "ACCESS_TOKEN_LIFETIME": timedelta(hours=24),
     "REFRESH_TOKEN_LIFETIME": timedelta(weeks=1),
+}
+
+
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+        }
+    },
+    "USE_SESSION_AUTH": False,
 }
